@@ -26,6 +26,7 @@ export default function Header() {
     useEffect(() => {
         handleHero();
         window.addEventListener('resize', handleHero);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
