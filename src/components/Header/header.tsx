@@ -30,7 +30,7 @@ export default function Header() {
     }, []);
 
     return (
-        <header style={{backgroundImage: heroImage}} className={styles.header}>
+        <header style={{backgroundImage: heroImage}} className={`${styles.header} container`}>
             <Nav />
 
             {location.pathname === '/' ?

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Nav() {
     return (
-        <nav className={styles.nav}>
+        <nav className={`${styles.nav} sub-container`}>
             <i className={`${styles.menuBars} fa-solid fa-bars`} title='menu'></i>
 
             <div className={styles.logo} >

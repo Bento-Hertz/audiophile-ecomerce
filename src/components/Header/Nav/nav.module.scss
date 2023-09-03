@@ -6,8 +6,6 @@
     justify-content: space-between;
     align-items: center;
     height: 90px;
-    margin: 0 auto;
-    max-width: 1100px;
     @media(min-width: $tablet) {
         justify-content: start;
         gap: 40px;

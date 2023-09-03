@@ -1,0 +1,40 @@
+@import 'styles/variables.scss';
+
+.categoryLinks {
+    padding-top: 100px;
+    ul {
+        display: grid;
+        gap: 64px;
+        @media(min-width: $tablet) {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+        i {
+            color: $orange;
+        }
+        .link {
+            position: relative;
+            max-width: 316px;
+            margin: 0 auto;
+            background-color: $gray;
+            display: grid;
+            gap: 16px;
+            justify-items: center;
+            padding: 88px 0 24px;
+            @media(min-width: $tablet) {
+                max-width: unset;
+                margin: 0;
+            }
+            .categoryIcon {
+                position: absolute;
+                width: 160px;
+                top: -50px;
+            }
+            div {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+        }
+    }
+}

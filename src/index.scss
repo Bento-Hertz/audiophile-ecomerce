@@ -44,6 +44,9 @@ button, input {
     padding: 0;
     color: inherit;
 }
+button {
+    cursor: pointer;
+}
 blockquote, q {
     quotes: none;
 }
@@ -59,6 +62,9 @@ table {
 i {
     color: white;
     font-size: 18px;
+}
+img {
+    width: 100%;
 }
 
 
@@ -115,9 +121,11 @@ h5 {
     }
 }
 h6 {
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 1.1px;
     @media(min-width: $tablet) { 
         font-size: 18px;
-        line-height: 24px;
         letter-spacing: 1.3px;
     }
 }
@@ -132,4 +140,21 @@ h6 {
     font-weight: 700;
     line-height: 25px;
     letter-spacing: 1px;
+}
+
+.container {
+    padding: 0 24px;
+    @media(min-width: $tablet) {
+        pading: 0 40px;
+    }
+    @media(min-width: $desktop) {
+        padding: 0 165px;
+    }
+}
+
+.sub-container {
+    margin: 0 auto !important;
+    @media(min-width: $desktop) {
+        max-width: 1100px !important;
+    }
 }
