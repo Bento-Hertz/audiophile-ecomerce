@@ -6,28 +6,25 @@ import heroTablet from 'assets/home/tablet/image-header.jpg';
 import heroDesktop from 'assets/home/desktop/image-header.jpg';
 import { useLocation } from 'react-router';
 import NewProduct from './NewProduct/new-product';
+import { useSelector } from 'react-redux';
+import { useCurrentBreakpoint } from 'store/slices/sliceCurrentBreakpoint';
 
 export default function Header() {
 
     const [heroImage, setHeroImage] = useState(``);
 
     const location = useLocation();
-    function handleHero() {
+    const currentBreakpoint = useSelector(useCurrentBreakpoint);
+    useEffect(() => {
         if(location.pathname === '/') {
-            if(window.innerWidth >= 1200)
+            if(currentBreakpoint === 'desktop')
                 setHeroImage(`url(${heroDesktop})`);
             else if(window.innerWidth >= 500)
                 setHeroImage(`url(${heroTablet})`);
             else
                 setHeroImage(`url(${heroMobile})`);
         }
-    }
-
-    useEffect(() => {
-        handleHero();
-        window.addEventListener('resize', handleHero);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [currentBreakpoint, location]);
 
     return (
         <header style={{backgroundImage: heroImage}} className={`${styles.header} container`}>

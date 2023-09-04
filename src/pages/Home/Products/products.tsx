@@ -14,6 +14,8 @@ import earphoneYX1BackgroundDesktop from 'assets/home/desktop/image-earphones-yx
 import orangeBackgroundMobile from 'assets/home/mobile/orange-background.jpg';
 import orangeBackgroundTablet from 'assets/home/tablet/orange-background.jpg';
 import orangeBackgroundDesktop from 'assets/home/desktop/orange-background.jpg';
+import { useCurrentBreakpoint } from 'store/slices/sliceCurrentBreakpoint';
+import { useSelector } from 'react-redux';
 
 
 export default function Products() {
@@ -22,13 +24,14 @@ export default function Products() {
     const [speakerZX7Background, setSpeakerZX7Background] = useState('');
     const [earphoneYX1Background, setEarphoneYX1Background] = useState('');
 
-    function handleImages() {
-        if(window.innerWidth >= 1200) {
+    const currentBreakpoint = useSelector(useCurrentBreakpoint);
+    useEffect(() => {
+        if(currentBreakpoint === 'desktop') {
             setOrangeBackground(`url(${orangeBackgroundDesktop})`);
             setSpeakerZX7Background(`url(${speakerZX7BackgroundDesktop})`)
             setEarphoneYX1Background(earphoneYX1BackgroundDesktop)
         }
-        else if(window.innerWidth >= 768){
+        else if(currentBreakpoint === 'tablet'){
             setOrangeBackground(`url(${orangeBackgroundTablet})`);
             setSpeakerZX7Background(`url(${speakerZX7BackgroundTablet})`)
             setEarphoneYX1Background(earphoneYX1BackgroundTablet)
@@ -38,12 +41,7 @@ export default function Products() {
             setSpeakerZX7Background(`url(${speakerZX7BackgroundMobile})`)
             setEarphoneYX1Background(earphoneYX1BackgroundMobile)
         }
-    }
-
-    useEffect(() => {
-        handleImages();
-        window.addEventListener('resize', handleImages);
-    }, []);
+    }, [currentBreakpoint]);
 
     return (
         <section className={`${styles.products} sub-container`}>
