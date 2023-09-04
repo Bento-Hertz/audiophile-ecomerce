@@ -17,7 +17,7 @@ export default function Header() {
     const currentBreakpoint = useSelector(useCurrentBreakpoint);
     useEffect(() => {
         if(location.pathname === '/') {
-            if(currentBreakpoint === 'desktop')
+            if(currentBreakpoint === 'tablet' || currentBreakpoint === 'desktop')
                 setHeroImage(`url(${heroDesktop})`);
             else if(window.innerWidth >= 500)
                 setHeroImage(`url(${heroTablet})`);
