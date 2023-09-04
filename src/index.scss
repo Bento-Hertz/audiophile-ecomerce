@@ -93,6 +93,9 @@ h1 {
     }
 }
 h2 {
+    font-size: 28px;
+    line-height: 38px;
+    letter-spacing: 1px;
     @media(min-width: $tablet) {
         font-size: 40px;
         line-height: 44px;
@@ -120,10 +123,11 @@ h5 {
 }
 h6 {
     font-size: 15px;
-    line-height: 24px;
+    line-height: 20px;
     letter-spacing: 1.1px;
     @media(min-width: $tablet) { 
         font-size: 18px;
+        line-height: 24px;
         letter-spacing: 1.3px;
     }
 }

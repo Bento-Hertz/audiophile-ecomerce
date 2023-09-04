@@ -1,0 +1,63 @@
+@import 'styles/variables';
+
+.aboutUs {
+    display: grid;
+    gap: 32px;
+    @media(min-width: $desktop) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.bestGearImage {
+    background-color: $gray;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    padding-top: 91%;
+    @media(min-width: $tablet) {
+        padding-top: 43%;
+    }
+    @media(min-width: $desktop) {
+        padding-top: 108.5%;
+        grid-column: 2;
+        grid-row: 1;
+    }
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.content {
+    display: grid;
+    gap: 32px;
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+    @media(min-width: $desktop) {
+        text-align: start;
+        justify-items: start;
+        grid-column: 1;
+        grid-row: 1;
+    }
+    h2 {
+        max-width: 400px;
+        @media(min-width: $tablet) {
+            max-width: 580px;
+        }
+        @media(min-width: $desktop) {
+            max-width: 450px;
+        }
+        span {
+            color: $orange;
+        }
+    }
+    p {
+        max-width: 580px;
+        @media(min-width: $desktop) {
+            max-width: 450px;
+        }
+    }
+
+}
