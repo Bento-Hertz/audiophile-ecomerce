@@ -60,7 +60,7 @@ table {
     border-spacing: 0;
 }
 i {
-    color: white;
+    color: $white;
     font-size: 18px;
 }
 img {
@@ -71,6 +71,7 @@ img {
 //style
 * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 body {
     font-family: 'Manrope', sans-serif;

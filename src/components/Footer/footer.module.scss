@@ -1,0 +1,43 @@
+@import 'styles/variables';
+
+.footer {
+    background-color: $light-black;
+    color: $white;
+}
+
+.details {
+    position: relative;
+    .text {
+        padding-bottom: 48px;
+        opacity: 0.5;
+        display: grid;
+        gap: 48px;
+        text-align: center;
+        max-width: 540px;
+        margin: 0 auto;
+        @media(min-width: $tablet) {
+            margin: 0;
+            text-align: start;
+        }
+    }
+    .social {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 48px;
+        @media(min-width: $tablet) {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        .link {
+            height: 100%;
+            display: flex;
+            align-content: center;
+            img {
+                width: 24px;
+            }
+        }
+    }
+}

@@ -4,6 +4,7 @@ import Home from './pages/Home/home';
 import Header from './components/Header/header';
 import { useDispatch } from 'react-redux';
 import { changeCurrentBreakpoint } from 'store/slices/sliceCurrentBreakpoint';
+import Footer from 'components/Footer/footer';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}/>
       </Routes>
+      <Footer />
     </Router>
   );
 }

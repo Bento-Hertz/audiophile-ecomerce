@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Nav from './Nav/nav';
+import Nav from '../Nav/nav';
 import styles from './header.module.scss';
 import heroMobile from 'assets/home/mobile/image-header.jpg';
 import heroTablet from 'assets/home/tablet/image-header.jpg';

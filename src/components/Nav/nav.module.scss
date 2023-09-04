@@ -1,0 +1,90 @@
+@import 'styles/variables.scss';
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 90px;
+    @media(min-width: $tablet) {
+        justify-content: start;
+        gap: 40px;
+    }
+    @media(min-width: $desktop) {
+        justify-content: space-between;
+    }
+    .menuBars {
+        @media(min-width: $desktop) {
+            display: none;
+        }
+    }
+    .cart {
+        @media(min-width: $tablet) {
+            position: absolute;
+            right: 0;
+        }
+        @media(min-width: $desktop) {
+            position: unset;
+        }
+    }
+    .links {
+        display: none;
+        @media(min-width: $desktop) {
+            display: flex;
+            gap: 32px;
+        }
+    }
+}
+
+.nav::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 0.5px;
+    background-color: $white;
+    opacity: 0.1;
+}
+
+.logo {
+    width: 143px;
+    height: 25px;
+    display: flex;
+    align-content: center;
+}
+
+.footerNav {
+    position: relative;
+    display: grid;
+    gap: 48px;
+    justify-items: center;
+    text-align: center;
+    padding: 48px 0;
+    @media(min-width: $tablet) {
+        justify-items: start;
+    }
+    @media(min-width: $desktop) {
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+    }
+    .links {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        @media(min-width: $tablet) {
+            flex-direction: row;
+            gap: 32px;
+        }
+    }
+}
+
+.footerNav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: $orange;
+}

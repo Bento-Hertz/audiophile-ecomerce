@@ -1,11 +1,23 @@
 import styles from './nav.module.scss';
 import logo from 'assets/audiophile.svg';
+import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 
-export default function Nav() {
+interface Props {
+    isInFooter?: boolean;
+}
+
+export default function Nav({isInFooter = false}: Props) {
+
     return (
-        <nav className={`${styles.nav} sub-container`}>
-            <i className={`${styles.menuBars} fa-solid fa-bars`} title='menu'></i>
+        <nav className={classNames({
+            'sub-container': true,
+            [styles.nav]: !isInFooter,
+            [styles.footerNav]: isInFooter
+        })}>
+            {!isInFooter && 
+                <i className={`${styles.menuBars} fa-solid fa-bars`} title='menu'></i>
+            }
 
             <div className={styles.logo} >
                 <img src={logo} alt="logo" />
@@ -26,7 +38,9 @@ export default function Nav() {
                 </li>
             </ul>
 
-            <i className={`${styles.cart} fa-solid fa-cart-shopping`} title='cart'></i>
+            {!isInFooter &&
+                <i className={`${styles.cart} fa-solid fa-cart-shopping`} title='cart'></i>
+            }
         </nav>
     );
 }
