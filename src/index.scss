@@ -107,11 +107,9 @@ h3 {
     }
 }
 h4 {
-    @media(min-width: $tablet) { 
-        font-size: 28px;
-        line-height: 38px;
-        letter-spacing: 2px;
-    }
+    font-size: 28px;
+    line-height: 38px;
+    letter-spacing: 2px;
 }
 h5 {
     @media(min-width: $tablet) { 
@@ -145,16 +143,12 @@ h6 {
 .container {
     padding: 0 24px;
     @media(min-width: $tablet) {
-        pading: 0 40px;
-    }
-    @media(min-width: $desktop) {
-        padding: 0 165px;
+        padding: 0 40px;
     }
 }
 
 .sub-container {
     margin: 0 auto !important;
-    @media(min-width: $desktop) {
-        max-width: 1100px !important;
-    }
+    max-width: 1100px !important;
+    width: 100%;
 }

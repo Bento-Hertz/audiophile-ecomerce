@@ -1,0 +1,135 @@
+@import 'styles/variables';
+
+.products {
+    color: $white;
+    display: grid;
+    gap: 24px;
+    @media(min-width: $tablet) {
+        gap: 32px;
+    }
+    @media(min-width: $desktop) {
+        gap: 48px;
+    }
+}
+
+.speakerZX9 {
+    gap: 24px;
+    position: relative;
+    background-color: $orange;
+    justify-items: center;
+    text-align: center;
+    padding: 56px 24px;
+    overflow: hidden;
+    @media(min-width: $desktop) {
+        justify-content: end;
+        text-align: start;
+        padding: 56px 112px;
+        height: 560px;
+        align-content: center;
+    }
+    .img {
+        width: 150px;
+        height: 183px;
+        @media(min-width: $tablet) {
+            width: 200px;
+            height: 243px;
+        }
+        @media(min-width: $desktop) {
+            position: absolute;
+            left: 130px; 
+            bottom: -32px;
+            width: 380px;
+            height: auto;
+        }
+    }
+    h1, p {
+        max-width: 250px;
+        @media(min-width: $tablet) {
+            max-width: 300px;
+        }
+        @media(min-width: $desktop) {
+            max-width: 350px;
+        }
+    }
+    button {
+        background-color: black !important;
+        @media(min-width: $desktop) {
+            justify-self: start;
+        }
+    }
+}
+
+.speakerZX9, .speakerZX7 {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    border-radius: 8px;
+    display: grid;
+}
+
+.speakerZX7 { 
+    background-color: $gray;
+    height: 320px;
+    align-content: center;
+    justify-items: start;
+    padding: 0 24px;
+    @media(min-width: $tablet) {
+        padding: 0 64px;
+    }
+}
+
+.speakerZX7, .earphoneYX1 {
+    color: $black;
+    gap: 24px;
+    button {
+        color: $black;
+        background-color: transparent;
+        border: 2px solid $black;
+    }
+}
+
+.earphoneYX1 {
+    display: grid;
+    @media(min-width: $tablet) {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+    .img {
+        overflow: hidden;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .img, .more {
+        position: relative;
+        border-radius: 8px;
+        background-color: $gray;
+        padding-top: 61%;
+        @media(min-width: $tablet) {
+            padding-top: 94%;
+        }
+        @media(min-width: $desktop) {
+            padding-top: 59%;
+        }
+    }
+    .more {
+        display: grid;
+        align-items: center;
+        div {
+            position: absolute;
+            display: grid;
+            justify-items: start;
+            gap: 24px;
+            left: 24px;
+            @media(min-width: $tablet) {
+                left: 40px;
+            }
+            @media(min-width: $desktop) {
+                left: 96px;
+            }
+        }
+    }
+}
