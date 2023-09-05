@@ -10,32 +10,35 @@ import { useSelector } from 'react-redux';
 import { useCurrentBreakpoint } from 'store/slices/sliceCurrentBreakpoint';
 
 export default function Header() {
-
-    const [heroImage, setHeroImage] = useState(``);
-
-    const location = useLocation();
+    
+    const [heroImage, setHeroImage] = useState('');
     const currentBreakpoint = useSelector(useCurrentBreakpoint);
     useEffect(() => {
-        if(location.pathname === '/') {
-            if(currentBreakpoint === 'tablet' || currentBreakpoint === 'desktop')
-                setHeroImage(`url(${heroDesktop})`);
-            else if(window.innerWidth >= 500)
-                setHeroImage(`url(${heroTablet})`);
-            else
-                setHeroImage(`url(${heroMobile})`);
-        }
-    }, [currentBreakpoint, location]);
+        if(currentBreakpoint === 'tablet' || currentBreakpoint === 'desktop')
+            setHeroImage(`url(${heroDesktop})`);
+        else if(window.innerWidth >= 500)
+            setHeroImage(`url(${heroTablet})`);
+        else
+            setHeroImage(`url(${heroMobile})`);
+    }, [currentBreakpoint]);
+
+    const location = useLocation();
 
     return (
-        <header style={{backgroundImage: heroImage}} className={`${styles.header} container`}>
+        <header style={location.pathname === '/' ? {backgroundImage: heroImage} : {}} className={`${styles.header} container`}>
             <Nav />
 
-            {location.pathname === '/' ?
-                <NewProduct/>
+            {location.pathname === '/' ? 
+                <NewProduct />
+            : location.pathname === '/category/headphones' ?
+                <h2 className={styles.category}>HEADPHONES</h2>
+            : location.pathname === '/category/speakers' ?
+                <h2 className={styles.category}>SPEAKERS</h2>
+            : location.pathname === '/category/earphones' ?
+                <h2 className={styles.category}>EARPHONES</h2>
             :
                 <></>
             }
-            
         </header>
     );
 }

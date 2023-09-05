@@ -1,0 +1,73 @@
+@import 'styles/variables';
+
+.product {
+    display: grid;
+    gap: 32px;
+    @media(min-width: $tablet) {
+        gap: 48px;
+    }
+    @media(min-width: $desktop) {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 120px;
+    }
+    &__swapColumns {
+        @media(min-width: $desktop) {
+            grid-template-columns: 1fr 1.2fr !important;
+            .img {
+                grid-column: 2;
+                grid-row: 1;
+            }
+            .details {
+                grid-column: 1;
+                grid-row: 1;
+            }
+        }
+    }
+}
+
+.img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: $gray;
+    padding-top: 106.5%;
+    @media(min-width: $tablet) {
+        padding-top: 50.5%;
+    }
+    @media(min-width: $desktop) {
+        padding-top: 103.5%;
+    }
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.details {
+    display: grid;
+    gap: 24px;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    @media(min-width: $tablet) {
+        gap: 32px;
+    }
+    @media(min-width: $desktop) {
+        justify-content: start;
+        text-align: start;
+    }
+    p {
+        max-width: 580px;
+    }
+    h2 {
+        text-transform: uppercase;
+        max-width: 350px;
+    }
+    h2, button {
+        justify-self: center;
+        @media(min-width: $desktop) {
+            justify-self: start;
+        }
+    }
+}

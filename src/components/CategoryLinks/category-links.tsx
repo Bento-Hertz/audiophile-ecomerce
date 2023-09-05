@@ -9,7 +9,7 @@ export default function CategoryLinks() {
         <section className={`${styles.categoryLinks} sub-container`}>
             <ul>
                 <li>
-                    <Link className={styles.link} to=''>
+                    <Link className={styles.link} to='/category/headphones'>
                         <img className={styles.categoryIcon} src={headphoneIcon} alt="" />
                         <h6>HEADPHONES</h6>
                         <div>
@@ -19,7 +19,7 @@ export default function CategoryLinks() {
                     </Link>
                 </li>
                 <li>
-                    <Link className={styles.link} to=''>
+                    <Link className={styles.link} to='/category/speakers'>
                         <img className={styles.categoryIcon} src={speakerIcon} alt="" />
                         <h6>SPEAKERS</h6>
                         <div>
@@ -29,7 +29,7 @@ export default function CategoryLinks() {
                     </Link>
                 </li>
                 <li>
-                    <Link className={styles.link} to=''>
+                    <Link className={styles.link} to='/category/earphones'>
                         <img className={styles.categoryIcon} src={earphoneIcon} alt="" />
                         <h6>EARPHONES</h6>
                         <div>

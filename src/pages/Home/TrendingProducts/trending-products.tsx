@@ -1,5 +1,5 @@
 import Button from 'components/Button/button';
-import styles from './products.module.scss';
+import styles from './trending-products.module.scss';
 import { useEffect, useState } from 'react';
 import speakerZX9Icon from 'assets/home/desktop/image-speaker-zx9.png';
 
@@ -18,7 +18,7 @@ import { useCurrentBreakpoint } from 'store/slices/sliceCurrentBreakpoint';
 import { useSelector } from 'react-redux';
 
 
-export default function Products() {
+export default function TrendingProducts() {
 
     const [orangeBackground, setOrangeBackground] = useState('');
     const [speakerZX7Background, setSpeakerZX7Background] = useState('');
@@ -44,7 +44,7 @@ export default function Products() {
     }, [currentBreakpoint]);
 
     return (
-        <section className={`${styles.products} sub-container`}>
+        <section className={`${styles.trendingProducts} sub-container`}>
             <div style={{backgroundImage: orangeBackground}} className={styles.speakerZX9}>
                 <div className={styles.img}>
                     <img src={speakerZX9Icon} alt="" />

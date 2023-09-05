@@ -25,16 +25,16 @@ export default function Nav({isInFooter = false}: Props) {
 
             <ul className={styles.links}>
                 <li className='sub-title'>
-                    <Link to=''>HOME</Link>
+                    <Link to='/'>HOME</Link>
                 </li>
                 <li className='sub-title'>
-                    <Link to=''>HEADPHONES</Link>
+                    <Link to='category/headphones'>HEADPHONES</Link>
                 </li>
                 <li className='sub-title'>
-                    <Link to=''>SPEAKERS</Link>
+                    <Link to='category/speakers'>SPEAKERS</Link>
                 </li>
                 <li className='sub-title'>
-                    <Link to=''>EARPHONES</Link>
+                    <Link to='category/earphones'>EARPHONES</Link>
                 </li>
             </ul>
 
