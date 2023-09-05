@@ -5,9 +5,9 @@ interface Props {
     products: IProduct[];
 }
 
-export default function Headphones({products}: Props) {
+export default function Speakers({products}: Props) {
 
-    const filteredProducts = products.filter(product => product.category === 'headphones');
+    const filteredProducts = products.filter(product => product.category === 'speakers');
     
     return (
         <main className='container'>

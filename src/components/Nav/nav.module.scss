@@ -11,7 +11,8 @@
         gap: 40px;
     }
     @media(min-width: $desktop) {
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
     }
     .menuBars {
         @media(min-width: $desktop) {
@@ -25,6 +26,7 @@
         }
         @media(min-width: $desktop) {
             position: unset;
+            justify-self: end;
         }
     }
     .links {

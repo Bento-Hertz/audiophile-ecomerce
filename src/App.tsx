@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import Home from './pages/Home/home';
 import Header from './components/Header/header';
 import { useDispatch } from 'react-redux';
@@ -9,6 +9,8 @@ import Headphones from 'pages/Headphones/headphones';
 import ScrollToTop from 'components/ScrollToTop';
 import IProduct from 'interfaces/product';
 import productList from 'data/data.json';
+import Speakers from 'pages/Speakers/speakers';
+import Earphones from 'pages/Earphones/earphones';
 
 function App() {
 
@@ -38,8 +40,12 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />}/>
+        <Route path='*' element={<Navigate to='/'/>}/>
         <Route path='category'>
+          <Route path='' element={<Navigate to='/'/>}/>
           <Route path='headphones' element={<Headphones products={products}/>}/>
+          <Route path='speakers' element={<Speakers products={products}/>}/>
+          <Route path='earphones' element={<Earphones products={products}/>}/>
         </Route>
       </Routes>
       <Footer />
