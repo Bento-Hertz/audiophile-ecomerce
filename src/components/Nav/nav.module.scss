@@ -15,6 +15,7 @@
         grid-template-columns: 1fr 1fr 1fr;
     }
     .menuBars {
+        width: 20px;
         @media(min-width: $desktop) {
             display: none;
         }
@@ -89,4 +90,11 @@
     width: 100px;
     height: 4px;
     background-color: $orange;
+}
+
+.sidebarNav {
+    .links {
+        display: grid;
+        gap: 24px;
+    }
 }

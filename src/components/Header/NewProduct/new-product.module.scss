@@ -25,7 +25,7 @@
         max-width: 400px;
         text-align: start;
     }
-    button {
+    a {
         justify-self: center;
         @media(min-width: $tablet) {
             justify-self: start;

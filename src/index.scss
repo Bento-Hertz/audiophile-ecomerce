@@ -78,10 +78,11 @@ body {
     font-weight: 500;
     font-size: 15px;
     line-height: 25px;
-    color: $black;
+    color: $transparent-black;
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
+    color: $black;
 }
 h1 {
     font-size: 36px;
@@ -104,9 +105,11 @@ h2 {
     }
 }
 h3 {
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.9px;
     @media(min-width: $tablet) { 
         font-size: 32px;
-        line-height: 36px;
         letter-spacing: 1.15px;
     }
 }
@@ -116,11 +119,9 @@ h4 {
     letter-spacing: 2px;
 }
 h5 {
-    @media(min-width: $tablet) { 
-        font-size: 24px;
-        line-height: 33px;
-        letter-spacing: 1.7px;
-    }
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 1.7px;
 }
 h6 {
     font-size: 15px;
@@ -146,9 +147,12 @@ h6 {
 }
 
 .container {
-    padding: 0 24px;
+    display: grid;
+    gap: 88px;
+    padding: 64px 24px;
     @media(min-width: $tablet) {
-        padding: 0 40px;
+        gap: 120px;
+        padding: 80px 40px;
     }
 }
 
@@ -156,4 +160,11 @@ h6 {
     margin: 0 auto !important;
     max-width: 1100px !important;
     width: 100%;
+    &__gap {
+        display: grid;
+        gap: 64px;
+        @media(min-width: $tablet) {
+            gap: 96px;
+        }
+    }
 }

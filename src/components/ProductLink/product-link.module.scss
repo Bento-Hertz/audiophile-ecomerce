@@ -1,7 +1,9 @@
 @import 'styles/variables';
 
-.button {
+.link {
     background-color: $orange;
     padding: 16px 32px;
     color: $white;
+    display: flex;
+    flex-wrap: nowrap;
 }

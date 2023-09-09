@@ -1,4 +1,6 @@
-import Products from 'components/Products/products';
+import AboutUs from 'components/AboutUs/about-us';
+import CategoryLinks from 'components/CategoryLinks/category-links';
+import Product from 'components/Product/product';
 import IProduct from 'interfaces/product';
 
 interface Props {
@@ -11,7 +13,16 @@ export default function Earphones({products}: Props) {
     
     return (
         <main className='container'>
-            <Products filteredProducts={filteredProducts}/>
+            <section className='sub-container sub-container__gap'>
+                {filteredProducts.map((product, index) => {
+                    if(index%2 !== 0) 
+                        return <Product swapColumns={true} key={product.id} product={product}/>
+                    else
+                        return <Product key={product.id} product={product}/>
+                })}
+            </section>
+            <CategoryLinks />
+            <AboutUs />
         </main>
     );
 }

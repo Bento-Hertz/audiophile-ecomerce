@@ -3,13 +3,17 @@
 .footer {
     background-color: $light-black;
     color: $white;
+    padding: 0 24px;
+    @media(min-width: $tablet) {
+        padding: 0 40px;
+    }
 }
 
 .details {
     position: relative;
     .text {
+        color: $transparent-white;
         padding-bottom: 48px;
-        opacity: 0.5;
         display: grid;
         gap: 48px;
         text-align: center;

@@ -1,4 +1,4 @@
-import Button from 'components/Button/button';
+import ProductLink from 'components/ProductLink/product-link';
 import styles from './trending-products.module.scss';
 import { useEffect, useState } from 'react';
 import speakerZX9Icon from 'assets/home/desktop/image-speaker-zx9.png';
@@ -51,12 +51,12 @@ export default function TrendingProducts() {
                 </div>
                 <h1>ZX9 SPEAKER</h1>
                 <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                <Button />
+                <ProductLink path='/product/zx9-speaker'/>
             </div>
 
             <div style={{backgroundImage: speakerZX7Background}} className={styles.speakerZX7}>
                 <h4>ZX7 SPEAKER</h4>
-                <Button />
+                <ProductLink path='/product/zx7-speaker'/>
             </div>
 
             <div className={styles.earphoneYX1}>
@@ -66,7 +66,7 @@ export default function TrendingProducts() {
                 <div className={styles.more}>
                     <div>
                         <h4>YX1 EARPHONES</h4>
-                        <Button />
+                        <ProductLink path='/product/yx1-earphones'/>
                     </div>
                 </div>
             </div>

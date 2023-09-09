@@ -4,13 +4,16 @@
     width: 100%;
     ul {
         display: grid;
-        gap: 64px;
+        gap: 32px;
         @media(min-width: $tablet) {
             grid-template-columns: 1fr 1fr 1fr;
             gap: 16px;
         }
         i {
             color: $orange;
+        }
+        li {
+            padding-top: 56px;
         }
         .link {
             position: relative;

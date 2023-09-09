@@ -6,6 +6,13 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    padding: 0 24px;
+    @media(min-width: $tablet) {
+        padding: 0 40px;
+    }
+    h1, h2 {
+        color: $white;
+    }
 }
 
 .category {

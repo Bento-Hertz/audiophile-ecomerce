@@ -64,7 +64,7 @@
         text-transform: uppercase;
         max-width: 350px;
     }
-    h2, button {
+    h2, a {
         justify-self: center;
         @media(min-width: $desktop) {
             justify-self: start;

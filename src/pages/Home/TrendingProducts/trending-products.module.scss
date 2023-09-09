@@ -42,6 +42,9 @@
             height: auto;
         }
     }
+    h1 {
+        color: $white;
+    }
     h1, p {
         max-width: 250px;
         @media(min-width: $tablet) {
@@ -51,7 +54,7 @@
             max-width: 350px;
         }
     }
-    button {
+    a {
         background-color: black !important;
         @media(min-width: $desktop) {
             justify-self: start;
@@ -82,7 +85,7 @@
 .speakerZX7, .earphoneYX1 {
     color: $black;
     gap: 24px;
-    button {
+    a {
         color: $black;
         background-color: transparent;
         border: 2px solid $black;

@@ -2,43 +2,54 @@ import styles from './nav.module.scss';
 import logo from 'assets/audiophile.svg';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
+import menuIcon from 'assets/shared/tablet/icon-hamburger.svg';
+import { useDispatch } from 'react-redux';
+import { changeSidebarState } from 'store/slices/sliceSidebarState';
 
 interface Props {
     isInFooter?: boolean;
+    isInSidebar?: boolean;
 }
 
-export default function Nav({isInFooter = false}: Props) {
+export default function Nav({isInFooter = false, isInSidebar = false}: Props) {
+
+    const dispatch = useDispatch();
 
     return (
         <nav className={classNames({
-            'sub-container': true,
-            [styles.nav]: !isInFooter,
-            [styles.footerNav]: isInFooter
+            [styles.nav]: !isInFooter && !isInSidebar,
+            [styles.footerNav]: isInFooter,
+            [styles.sidebarNav]: isInSidebar,
+            'sub-container': true
         })}>
-            {!isInFooter && 
-                <i className={`${styles.menuBars} fa-solid fa-bars`} title='menu'></i>
+            {(!isInFooter && !isInSidebar) && 
+                <button className={styles.menuBars} onClick={() => dispatch(changeSidebarState(false))}>
+                    <img src={menuIcon} alt='menu'></img>
+                </button>
             }
 
-            <div className={styles.logo} >
-                <img src={logo} alt="logo" />
-            </div>
+            {!isInSidebar && 
+                <Link to='/' className={styles.logo} >
+                    <img src={logo} alt="logo" />
+                </Link>      
+            }
 
             <ul className={styles.links}>
                 <li className='sub-title'>
                     <Link to='/'>HOME</Link>
                 </li>
                 <li className='sub-title'>
-                    <Link to='category/headphones'>HEADPHONES</Link>
+                    <Link to='/headphones'>HEADPHONES</Link>
                 </li>
                 <li className='sub-title'>
-                    <Link to='category/speakers'>SPEAKERS</Link>
+                    <Link to='/speakers'>SPEAKERS</Link>
                 </li>
                 <li className='sub-title'>
-                    <Link to='category/earphones'>EARPHONES</Link>
+                    <Link to='/earphones'>EARPHONES</Link>
                 </li>
             </ul>
 
-            {!isInFooter &&
+            {(!isInFooter && !isInSidebar) &&
                 <i className={`${styles.cart} fa-solid fa-cart-shopping`} title='cart'></i>
             }
         </nav>

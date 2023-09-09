@@ -25,16 +25,16 @@ export default function Header() {
     const location = useLocation();
 
     return (
-        <header style={location.pathname === '/' ? {backgroundImage: heroImage} : {}} className={`${styles.header} container`}>
+        <header style={location.pathname === '/' ? {backgroundImage: heroImage} : {}} className={styles.header}>
             <Nav />
 
             {location.pathname === '/' ? 
                 <NewProduct />
-            : location.pathname === '/category/headphones' ?
+            : location.pathname === '/headphones' ?
                 <h2 className={styles.category}>HEADPHONES</h2>
-            : location.pathname === '/category/speakers' ?
+            : location.pathname === '/speakers' ?
                 <h2 className={styles.category}>SPEAKERS</h2>
-            : location.pathname === '/category/earphones' ?
+            : location.pathname === '/earphones' ?
                 <h2 className={styles.category}>EARPHONES</h2>
             :
                 <></>

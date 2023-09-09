@@ -7,12 +7,12 @@ import instagramIcon from 'assets/shared/desktop/icon-instagram.svg';
 
 export default function Footer() {
     return (
-        <footer className={`${styles.footer} container`}>
-            <Nav isInFooter={true}/>
+        <footer className={styles.footer}>
+            <Nav isInFooter/>
             <div className={`${styles.details} sub-container`}>
                 <div className={styles.text}>
                     <p>Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
-                    <span>Copyright 2021. All Rights Reserved</span>
+                    <span>Copyright 2023. All Rights Reserved.</span>
                 </div>
                 <ul className={styles.social}>
                     <li>
