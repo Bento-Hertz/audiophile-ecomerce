@@ -1,0 +1,28 @@
+@import 'styles/variables';
+
+.recommendations {
+    h3 {
+        margin-bottom: 40px;
+        @media(min-width: $tablet) {
+            margin-bottom: 56px;
+        }
+    }
+    ul {
+        display: grid;
+        gap: 56px;
+        @media(min-width: $tablet) {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+        li {
+            display: grid;
+            gap: 32px;
+            text-align: center;
+            justify-items: center;
+            align-content: space-between;
+            img {
+                border-radius: 8px;
+            }
+        }
+    }
+}
