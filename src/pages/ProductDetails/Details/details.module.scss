@@ -61,8 +61,12 @@
         }
         .addToCart {
             display: flex;
+            flex-direction: column;
             gap: 16px;
             align-items: start;
+            @media(min-width: $tablet) {
+                flex-direction: row;
+            }
             .quantity {
                 display: flex;
                 background-color: $gray;
@@ -71,11 +75,17 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    width: 32px;
+                    width: 46px;
                     height: 46px;
-                    @media(min-width: $tablet) {
-                        width: 46px;
+                }
+                button:hover {
+                    @media(min-width: $desktop) {
+                        color: $orange;
                     }
+                }
+                button:active {
+                    color: $orange;
+                    border: 1px solid $transparent-black;
                 }
             }
             .addButton {
@@ -84,7 +94,12 @@
                 background-color: $orange;
                 display: flex;
                 min-width: 120px;
-                
+            }
+            .addButton:hover {
+                @media(min-width: $desktop) {
+                    background-color: $light-orange;
+                    transition: 0.25s;
+                }
             }
         }
     }

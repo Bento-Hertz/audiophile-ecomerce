@@ -39,5 +39,14 @@
                 gap: 8px;
             }
         }
+        .link:hover {
+            @media(min-width: $desktop) {
+                div {
+                    span {
+                        color: $orange;
+                    }
+                }
+            }
+        }
     }
 }

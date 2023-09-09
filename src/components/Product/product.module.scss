@@ -57,6 +57,16 @@
         justify-content: start;
         text-align: start;
     }
+    div {
+        display: grid;
+        .newProduct {
+            color: $orange;
+            margin-bottom: 24px;
+            @media(min-width: $tablet) {
+                margin-bottom: 16px;
+            }
+        }
+    }
     p {
         max-width: 580px;
     }

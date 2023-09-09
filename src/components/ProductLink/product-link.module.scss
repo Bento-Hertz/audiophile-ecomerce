@@ -7,3 +7,10 @@
     display: flex;
     flex-wrap: nowrap;
 }
+
+.link:hover {
+    @media(min-width: $desktop) {
+        background-color: $light-orange;
+        transition: 0.25s;
+    }
+}

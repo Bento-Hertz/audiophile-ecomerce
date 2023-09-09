@@ -50,13 +50,6 @@
     opacity: 0.1;
 }
 
-.logo {
-    width: 143px;
-    height: 25px;
-    display: flex;
-    align-content: center;
-}
-
 .footerNav {
     position: relative;
     display: grid;
@@ -96,5 +89,42 @@
     .links {
         display: grid;
         gap: 24px;
+    }
+}
+
+.logo {
+    width: 143px;
+    height: 25px;
+    display: flex;
+    align-content: center;
+}
+
+.links {
+    li a {
+        transition: 0.25s;
+    }
+    li a:hover{
+        @media(min-width: $desktop) {
+            color: $orange;
+            transition: 0.25s;
+        }
+    }
+}
+
+.links li a:hover::after {
+    @media(min-width: $desktop) {
+        width: 100%;
+        transition: 0.25s;
+    }
+}
+
+.links li a::after {
+    @media(min-width: $desktop) {
+        content: '';
+        display: block;
+        background-color: $orange;
+        height: 2px;
+        width: 0;
+        transition: 0.25s;
     }
 }

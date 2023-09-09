@@ -55,9 +55,15 @@
         }
     }
     a {
-        background-color: black !important;
+        background-color: $black;
         @media(min-width: $desktop) {
             justify-self: start;
+        }
+    }
+    a:hover {
+        @media(min-width: $desktop) {
+            background-color: $dark-gray;
+            transition: 0.25s;
         }
     }
 }
@@ -89,6 +95,13 @@
         color: $black;
         background-color: transparent;
         border: 2px solid $black;
+    }
+    a:hover {
+        @media(min-width: $desktop) {
+            background-color: $black;
+            color: $white;
+            transition: 0.25s;
+        }
     }
 }
 

@@ -35,7 +35,12 @@ export default function Product({product, swapColumns=false}: Props) {
                 <img src={productImage} alt="" />
             </div>
             <div className={styles.details}>
-                <h2>{name}</h2>
+                <div>
+                    {product.new && 
+                        <span className={`${styles.newProduct} overline`}>NEW PRODUCT</span>
+                    }
+                    <h2>{name}</h2>
+                </div>
                 <p>{description}</p>
                 <ProductLink path={`/product/${slug}`}/>
             </div>
