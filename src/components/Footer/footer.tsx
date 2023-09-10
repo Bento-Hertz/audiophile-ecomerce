@@ -16,19 +16,19 @@ export default function Footer() {
                 </div>
                 <ul className={styles.social}>
                     <li>
-                        <Link className={styles.link} to=''>
+                        <a className={styles.link} href='typescript:void(0)'>
                             <img src={facebookIcon} alt="" />
-                        </Link>
+                        </a>
                     </li>
                     <li>
-                        <Link className={styles.link} to=''>
+                        <a className={styles.link} href='typescript:void(0)'>
                             <img src={twitterIcon} alt="" />
-                        </Link>
+                        </a>
                     </li>
                     <li>
-                        <Link className={styles.link} to=''>
+                        <a className={styles.link} href='typescript:void(0)'>
                             <img src={instagramIcon} alt="" />
-                        </Link>
+                        </a>
                     </li>
                 </ul>
             </div>

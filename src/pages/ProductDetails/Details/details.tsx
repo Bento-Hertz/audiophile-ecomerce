@@ -5,7 +5,7 @@ import styles from './details.module.scss';
 import IProduct from 'interfaces/product';
 import ProductCounter from 'components/ProductCounter/product-counter';
 import { addProductToCart, changeProductQuantity, useCartProducts } from 'store/slices/sliceCartProducts';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Alert from './Alert/alert';
 
 export default function Details(product: IProduct) {
@@ -61,9 +61,12 @@ export default function Details(product: IProduct) {
         }, 5000);
     }
 
+    const navigate = useNavigate();
+
     return (
         <>
             <section className={`${styles.product} sub-container`}>
+                <button className={styles.goBackButton} onClick={() => navigate(-1)}>{'< Go Back'}</button>
                 <div className={styles.img}>
                     <img src={productImage} alt="" />
                 </div>

@@ -1,6 +1,13 @@
 @import 'styles/variables';
 
+.goBackButton {
+    position: absolute;
+    top: -32px;
+    left: 0;
+}
+
 .product {
+    position: relative;
     display: grid;
     gap: 32px;
     align-items: center;
@@ -77,6 +84,7 @@
             .addButton:hover {
                 @media(min-width: $desktop) {
                     background-color: $light-orange;
+                    transition: 0.25s;
                 }
             }
             .addButton:active {
