@@ -1,0 +1,71 @@
+@import 'styles/variables.scss';
+
+.cart {
+    position: absolute;
+    z-index: 3;
+    top: 114px;
+    right: 0;
+    background-color: $white;
+    color: $transparent-black;
+    width: calc(100vw - 48px);
+    border-radius: 8px;
+    padding: 24px;
+    display: grid;
+    gap: 32px;
+    max-width: 378px;
+    &__closed {
+        display: none;
+    }
+    .cartProducts {
+        display: grid;
+        gap: 24px;
+    }
+    .header {
+        button {
+            text-decoration: underline;
+        }
+        button:active {
+            scale: 0.95;
+        }
+    }
+    .header, .total {
+        display: flex;
+        justify-content: space-between;
+    }
+    .total {
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: $black;
+        }
+    }
+    .checkout {
+        text-align: center;
+        background-color: $orange;
+        color: $white;
+        padding: 16px 0;
+    }
+    .checkout:hover {
+        @media(min-width: $desktop) {
+            background-color: $light-orange;
+        }
+    }
+}
+
+.closeArea {
+    position: fixed;
+    z-index: 2;
+    top: 90px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 90px);
+    background-color: $transparent-black;
+    transition: 0.1s;
+    &__closed {
+        display: none;
+    }
+    &__fullHeight {
+        top: 0;
+        height: 100vh;
+    }
+}

@@ -2,10 +2,9 @@
 
 .sidebar {
     position: fixed;
-    transition: 0.25s;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 4;
     height: 100vh;
     background-color: $light-black;
     color: $white;
@@ -20,35 +19,30 @@
         display: none;
     }
     &__closed {
-        left: -224px;
-        transition: 0.25s;
-        @media(min-width: $tablet) {
-            left: -256px;
-        }
+        display: none;
     }
     .closeSidebar {
         height: 90px;
         display: flex;
         align-items: center;
-        i {
-            font-size: 27px;
+        button {
+            display: flex;
+            align-content: center;
+            width: 20px;
         }
     }
-}
-
-.closeArea {
-    position: fixed;
-    top: 0;
-    left: 224px;
-    width: calc(100vw - 224px);
-    height: 100vh;
-    z-index: 1;
-    transition: 0.25s;
-    @media(min-width: $tablet) {
-        left: 256px;
-        width: calc(100vw - 256px);
-    }
-    &__closed {
-        display: none;
+    .closeArea {
+        position: fixed;
+        top: 0;
+        left: 224px;
+        width: calc(100vw - 224px);
+        height: 100vh;
+        z-index: 4;
+        transition: 0.25s;
+        background-color: $transparent-black;
+        @media(min-width: $tablet) {
+            left: 256px;
+            width: calc(100vw - 256px);
+        }
     }
 }

@@ -67,27 +67,6 @@
             @media(min-width: $tablet) {
                 flex-direction: row;
             }
-            .quantity {
-                display: flex;
-                background-color: $gray;
-                div, button {
-                    font-weight: bold;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 46px;
-                    height: 46px;
-                }
-                button:hover {
-                    @media(min-width: $desktop) {
-                        color: $orange;
-                    }
-                }
-                button:active {
-                    color: $orange;
-                    border: 1px solid $transparent-black;
-                }
-            }
             .addButton {
                 padding: 15px 34px;
                 color: $white;
@@ -98,8 +77,10 @@
             .addButton:hover {
                 @media(min-width: $desktop) {
                     background-color: $light-orange;
-                    transition: 0.25s;
                 }
+            }
+            .addButton:active {
+                scale: 0.9;
             }
         }
     }

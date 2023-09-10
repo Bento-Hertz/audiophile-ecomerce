@@ -1,6 +1,7 @@
 @import 'styles/variables.scss';
 
 .nav {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,12 +16,18 @@
         grid-template-columns: 1fr 1fr 1fr;
     }
     .menuBars {
-        width: 20px;
+        display: flex;
+        align-content: center;
         @media(min-width: $desktop) {
             display: none;
         }
+        img {
+            width: 20px;
+        }
     }
     .cart {
+        display: flex;
+        align-content: center;
         @media(min-width: $tablet) {
             position: absolute;
             right: 0;
@@ -28,6 +35,9 @@
         @media(min-width: $desktop) {
             position: unset;
             justify-self: end;
+        }
+        img {
+            width: 25px;
         }
     }
     .links {

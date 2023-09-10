@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeSidebarState, useSidebarState } from 'store/slices/sliceSidebarState';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import closeIcon from 'assets/shared/tablet/icon-close.svg';
 
 export default function Sidebar() {
 
@@ -24,16 +25,12 @@ export default function Sidebar() {
         })}>
             <div className={styles.closeSidebar}>
                 <button type='button' onClick={() => dispatch(changeSidebarState(true))}>
-                    <i className="fa-solid fa-xmark" title='close sidebar'></i>
+                    <img src={closeIcon} alt="close" />
                 </button>
             </div>
-
             <Nav isInSidebar/>
 
-            <div onClick={() => dispatch(changeSidebarState(true))} className={classNames({
-                [styles.closeArea]: true,
-                [styles.closeArea__closed]: isSidebarClosed
-            })}></div>
+            <div onClick={() => dispatch(changeSidebarState(true))} className={styles.closeArea}/>
         </div>
     );
 }

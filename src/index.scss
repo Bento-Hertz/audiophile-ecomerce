@@ -43,6 +43,7 @@ button, input {
     background-color: inherit;
     padding: 0;
     color: inherit;
+    font-size: inherit;
 }
 button {
     cursor: pointer;
@@ -124,14 +125,10 @@ h5 {
     letter-spacing: 1.7px;
 }
 h6 {
-    font-size: 15px;
-    line-height: 20px;
-    letter-spacing: 1.1px;
-    @media(min-width: $tablet) { 
-        font-size: 18px;
-        line-height: 24px;
-        letter-spacing: 1.3px;
-    }
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 1.3px;
+    
 }
 .overline {
     font-size: 14px;
@@ -152,7 +149,7 @@ h6 {
     padding: 64px 24px;
     @media(min-width: $tablet) {
         gap: 120px;
-        padding: 80px 40px;
+        // padding: 80px 40px;
     }
 }
 

@@ -1,0 +1,29 @@
+@import 'styles/variables';
+
+.quantity {
+    display: flex;
+    background-color: $gray;
+    div, button {
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 46px;
+        height: 46px;
+    }
+    button:hover {
+        @media(min-width: $desktop) {
+            color: $orange;
+        }
+    }
+    button:active {
+        color: $orange;
+        border: 1px solid $transparent-black;
+    }
+    &__small {
+        div, button {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}

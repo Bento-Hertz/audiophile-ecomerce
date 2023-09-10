@@ -1,0 +1,21 @@
+.modalMessage {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: rgb(7, 133, 17);
+    padding: 12px 56px;
+    text-align: center;
+    color: white;
+    &__active {
+        display: block !important;
+    }
+}
+
+.closeButton {
+    position: fixed;
+    top: 16px;
+    right: 24px;
+    cursor: pointer;
+}

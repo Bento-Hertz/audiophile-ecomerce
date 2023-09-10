@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useCurrentBreakpoint } from 'store/slices/sliceCurrentBreakpoint';
 import styles from './details.module.scss';
 import IProduct from 'interfaces/product';
+import ProductCounter from 'components/ProductCounter/product-counter';
+import { addProductToCart, changeProductQuantity, useCartProducts } from 'store/slices/sliceCartProducts';
+import { useLocation } from 'react-router-dom';
+import Alert from './Alert/alert';
 
 export default function Details(product: IProduct) {
     
@@ -35,6 +39,28 @@ export default function Details(product: IProduct) {
 
     }, [currentBreakpoint, product]);
 
+    const [productCounter, setProductCounter] = useState(1);
+    const location = useLocation();
+    useEffect(() => { 
+        setProductCounter(1);
+    }, [location]);
+
+    const dispatch = useDispatch();
+    const cartProducts = useSelector(useCartProducts);
+    const [activeAlert, setActiveAlert] = useState(false);
+    function onAddingToCart() {
+        const cartProduct = cartProducts.find(item => item.product.id === product.id);
+        if(cartProduct)
+            dispatch(changeProductQuantity({id: product.id, counter: cartProduct.quantity + productCounter}));
+        else
+            dispatch(addProductToCart({product: product, quantity: productCounter}));
+
+        setActiveAlert(true);
+        setTimeout(() => {
+            setActiveAlert(false);
+        }, 5000);
+    }
+
     return (
         <>
             <section className={`${styles.product} sub-container`}>
@@ -51,12 +77,8 @@ export default function Details(product: IProduct) {
                     <p>{product.description}</p>
                     <span className={styles.price}>$ {product.price}</span>
                     <div className={styles.addToCart}>
-                        <div className={styles.quantity}>
-                            <button type='button' className={styles.counterButton}>-</button>
-                            <div>1</div>
-                            <button type='button' className={styles.counterButton}>+</button>
-                        </div>
-                        <button className={styles.addButton}>ADD TO CART</button>
+                        <ProductCounter counter={productCounter} onChangingCounter={(counter) => setProductCounter(counter)}/>
+                        <button className={styles.addButton} onClick={() => onAddingToCart()}>ADD TO CART</button>
                     </div>
                 </div>
             </section>
@@ -70,7 +92,7 @@ export default function Details(product: IProduct) {
                     <h3>IN THE BOX</h3>
                     <ul>
                         {product.includes.map(content => (
-                            <li>
+                            <li key={content.item}>
                                 <span className={styles.quantity}>{content.quantity}x</span>
                                 <span className={styles.item}>{content.item}</span>
                             </li>
@@ -86,6 +108,8 @@ export default function Details(product: IProduct) {
                 </div>
                 <img className={styles.mainImage} src={thirdImage} alt="" />
             </section>
+
+            <Alert activeAlert={activeAlert} onClosingAlert={() => setActiveAlert(false)}/>
         </>
     );
 }
