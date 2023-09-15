@@ -63,7 +63,9 @@ export default function Cart() {
                     <span>TOTAL</span>
                     <span className={styles.price}>$ {totalPrice}</span>
                 </div>
-                <Link className={styles.checkout} to=''>CHECKOUT</Link>
+                {cartProducts.length > 0 &&
+                    <Link className={`${styles.checkout} sub-title`} to='/checkout'>CHECKOUT</Link>
+                }
             </div>
 
             <div className={classNames({

@@ -13,6 +13,7 @@ import Speakers from 'pages/Speakers/speakers';
 import Earphones from 'pages/Earphones/earphones';
 import { ProductDetails } from 'pages/ProductDetails/product-details';
 import Sidebar from 'components/Sidebar/sidebar';
+import Checkout from 'pages/Checkout/checkout';
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
         <Route path='speakers' element={<Speakers products={products}/>}/>
         <Route path='earphones' element={<Earphones products={products}/>}/>
         <Route path='product/:slug' element={<ProductDetails products={products}/>}/>
+        <Route path='checkout' element={<Checkout />}/>
       </Routes>
       <Footer />
     </Router>

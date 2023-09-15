@@ -1,0 +1,39 @@
+@import 'styles/variables.scss';
+
+.li {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 24px;
+    justify-content: space-between;
+    align-items: center;
+    @media(max-width: 305px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.product {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    .img {
+        background-color: $gray;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-width: 64px;
+        min-height: 64px;
+        border-radius: 8px;
+    }
+    .about {
+        display: grid;
+        align-content: center;
+        .name {
+            font-weight: bold;
+            color: $black;
+        }
+    }
+}
+
+.quantity {
+    font-weight: bold;
+}

@@ -1,10 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import IProduct from "interfaces/product";
-
-interface ICartProduct {
-    product: IProduct;
-    quantity: number;
-}
+import ICartProduct from "interfaces/ICartProduct";
 
 const INITIAL_STATE: ICartProduct[] = [];
 

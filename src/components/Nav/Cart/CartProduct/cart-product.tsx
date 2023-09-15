@@ -1,16 +1,11 @@
-import IProduct from 'interfaces/product';
 import styles from './cart-product.module.scss';
 import ProductCounter from 'components/ProductCounter/product-counter';
 import { useDispatch } from 'react-redux';
 import { changeProductQuantity, removeProductFromCart } from 'store/slices/sliceCartProducts';
 import binIcon from 'assets/shared/tablet/icon-bin.svg';
+import ICartProduct from 'interfaces/ICartProduct';
 
-interface Props {
-    product: IProduct;
-    quantity: number;
-}
-
-export default function CartProduct({product, quantity}: Props) {
+export default function CartProduct({product, quantity}: ICartProduct) {
 
     const dispatch = useDispatch();
 

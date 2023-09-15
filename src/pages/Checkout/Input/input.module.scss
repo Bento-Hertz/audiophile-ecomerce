@@ -1,0 +1,15 @@
+@import 'styles/variables.scss';
+
+.input {
+    display: grid;
+    color: $black;
+    input {
+        padding: 18px 24px;
+        border: 2px solid #CFCFCF;
+        border-radius: 8px;
+    }
+    input:focus {
+        border: 2px solid $orange;
+    }
+}
+

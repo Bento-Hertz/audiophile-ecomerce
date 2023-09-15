@@ -7,6 +7,7 @@ import ProductCounter from 'components/ProductCounter/product-counter';
 import { addProductToCart, changeProductQuantity, useCartProducts } from 'store/slices/sliceCartProducts';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Alert from './Alert/alert';
+import GoBackButton from 'components/GoBackButton/go-back-button';
 
 export default function Details(product: IProduct) {
     
@@ -66,7 +67,7 @@ export default function Details(product: IProduct) {
     return (
         <>
             <section className={`${styles.product} sub-container`}>
-                <button className={styles.goBackButton} onClick={() => navigate(-1)}>{'< Go Back'}</button>
+                <GoBackButton />
                 <div className={styles.img}>
                     <img src={productImage} alt="" />
                 </div>
@@ -81,7 +82,7 @@ export default function Details(product: IProduct) {
                     <span className={styles.price}>$ {product.price}</span>
                     <div className={styles.addToCart}>
                         <ProductCounter counter={productCounter} onChangingCounter={(counter) => setProductCounter(counter)}/>
-                        <button className={styles.addButton} onClick={() => onAddingToCart()}>ADD TO CART</button>
+                        <button className={styles.addButton} onClick={onAddingToCart}>ADD TO CART</button>
                     </div>
                 </div>
             </section>

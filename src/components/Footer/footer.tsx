@@ -1,6 +1,5 @@
 import Nav from 'components/Nav/nav';
 import styles from './footer.module.scss';
-import { Link } from 'react-router-dom';
 import facebookIcon from 'assets/shared/desktop/icon-facebook.svg';
 import twitterIcon from 'assets/shared/desktop/icon-twitter.svg';
 import instagramIcon from 'assets/shared/desktop/icon-instagram.svg';
