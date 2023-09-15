@@ -9,8 +9,6 @@
 }
 
 .link:hover {
-    @media(min-width: $desktop) {
-        background-color: $light-orange;
-        transition: 0.25s;
-    }
+    background-color: $light-orange;
+    transition: 0.25s;
 }

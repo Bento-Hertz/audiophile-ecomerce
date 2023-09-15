@@ -46,9 +46,7 @@
         padding: 16px 0;
     }
     .checkout:hover {
-        @media(min-width: $desktop) {
-            background-color: $light-orange;
-        }
+        background-color: $light-orange;
     }
 }
 

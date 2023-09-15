@@ -61,10 +61,8 @@
         }
     }
     a:hover {
-        @media(min-width: $desktop) {
-            background-color: $dark-gray;
-            transition: 0.25s;
-        }
+        background-color: $dark-gray;
+        transition: 0.25s;
     }
 }
 
@@ -97,11 +95,9 @@
         border: 2px solid $black;
     }
     a:hover {
-        @media(min-width: $desktop) {
-            background-color: $black;
-            color: $white;
-            transition: 0.25s;
-        }
+        background-color: $black;
+        color: $white;
+        transition: 0.25s;
     }
 }
 

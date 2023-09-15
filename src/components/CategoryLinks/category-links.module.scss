@@ -40,11 +40,9 @@
             }
         }
         .link:hover {
-            @media(min-width: $desktop) {
-                div {
-                    span {
-                        color: $orange;
-                    }
+            div {
+                span {
+                    color: $orange;
                 }
             }
         }

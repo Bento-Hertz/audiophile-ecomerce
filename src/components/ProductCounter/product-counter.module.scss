@@ -12,9 +12,7 @@
         height: 46px;
     }
     button:hover {
-        @media(min-width: $desktop) {
-            color: $orange;
-        }
+        color: $orange;
     }
     button:active {
         color: $orange;

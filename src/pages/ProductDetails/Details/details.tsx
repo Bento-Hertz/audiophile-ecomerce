@@ -5,7 +5,7 @@ import styles from './details.module.scss';
 import IProduct from 'interfaces/product';
 import ProductCounter from 'components/ProductCounter/product-counter';
 import { addProductToCart, changeProductQuantity, useCartProducts } from 'store/slices/sliceCartProducts';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Alert from './Alert/alert';
 import GoBackButton from 'components/GoBackButton/go-back-button';
 
@@ -61,8 +61,6 @@ export default function Details(product: IProduct) {
             setActiveAlert(false);
         }, 5000);
     }
-
-    const navigate = useNavigate();
 
     return (
         <>
